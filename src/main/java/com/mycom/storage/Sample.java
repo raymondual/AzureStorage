@@ -39,9 +39,9 @@ public class Sample {
 	 * *****************************************************************************
 	 * ********************************************
 	 */
-	public static final String STORAGE_BLOB_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=maserati;AccountKey=Zgej9Pr2WIAW28YxV63i8ysdJWBPOzlAzpNN/eEWQtRmLA58pbZFe/P8elTEXby3edXBsw5KrXqSPQgD7D7AUQ==;EndpointSuffix=core.windows.net";
+	public static final String STORAGE_BLOB_CONNECTION_STRING = "";
 
-	public static final String STORAGE_FILE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=maseratifile;AccountKey=OEDCwyWTkpmcw6yLgmIV3OWJGNu95q5diBzGYsj3TbTMwvtT7H1VLB/k0AyEOLuPJQa+aiXR3jjcaBpIN+UROA==;EndpointSuffix=core.windows.net";
+	public static final String STORAGE_FILE_CONNECTION_STRING = "";
 	
 	public static void main(String[] args) {
 		new Sample().uploadStorageFile();		
