@@ -1,4 +1,4 @@
-package com.mycom.file;
+package com.mycom.storage;
 
 import com.microsoft.azure.storage.StorageException;
 

@@ -1,4 +1,4 @@
-package com.mycom.file;
+package com.mycom.storage;
 
 import java.io.File;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package com.mycom.file;
+package com.mycom.storage;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
