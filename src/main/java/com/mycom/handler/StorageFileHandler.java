@@ -37,11 +37,11 @@ public class StorageFileHandler {
         try {
             FileBasics.uploadStorageFile(file.getInputStream(), file.getSize(), fileName, storageShare, storageParentDir, storageChildDir);
             System.out.println("File upload successfully.");
-            int size = storageFileService.insertStorageFile(fileName, storageShare, storageParentDir, storageChildDir);
-            if(size <= 0) {
+            long id = storageFileService.insertStorageFile(fileName, storageShare, storageParentDir, storageChildDir);
+            if(id <= 0) {
                 System.out.println("Insert db failure");
             } else {
-                System.out.println("Insert db successfully");
+                System.out.println("Insert db successfully, id is " + id);
             }
         } catch (InvalidKeyException e) {
             e.printStackTrace();

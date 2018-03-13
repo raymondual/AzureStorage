@@ -16,13 +16,14 @@ public class StorageFileService {
 		super();
 	}
 	
-	public int insertStorageFile(String fileName,String storageShare,String storageParentDir,String storageChildDir) {
+	public long insertStorageFile(String fileName,String storageShare,String storageParentDir,String storageChildDir) {
 	    StorageFile record = new StorageFile();
 	    record.setFileName(fileName);
 	    record.setStorageShare(storageShare);
 	    record.setStorageParentDir(storageParentDir);
 	    record.setStorageChildDir(storageChildDir);
-	    return storageFileDao.insert(record);
+	    storageFileDao.insert(record);
+	    return record.getId();
 	}	
 
 	/**
