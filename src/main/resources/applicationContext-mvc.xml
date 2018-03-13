@@ -19,7 +19,11 @@
     <property name="prefix"  value="/WEB-INF/jsp/"></property>
     <property name="suffix"  value=".jsp"></property>
 </bean>
-
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <!--1024*1024*20=20M-->  
+    <property name="maxUploadSize"   value="20971520"/> 
+    <property name="maxInMemorySize" value="20971520" />
+</bean>
 <!-- 处理静态资源文件，303校验等等（标配，必须写） -->
 <mvc:default-servlet-handler/>
 <mvc:annotation-driven></mvc:annotation-driven>

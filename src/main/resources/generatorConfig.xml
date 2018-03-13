@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1">
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/maserati" driverClass="com.mysql.jdbc.Driver" password="N12345" userId="maserati" />
+    <javaModelGenerator targetPackage="com.mycom.entity" targetProject="AzureStorage" />
+    <sqlMapGenerator targetPackage="com.mycom.mapper" targetProject="AzureStorage" />
+    <javaClientGenerator targetPackage="com.mycom.dao" targetProject="AzureStorage" type="XMLMAPPER" />
+    <table schema="maserati" tableName="storage_file">
+      <columnOverride column="ID" property="id" />
+      <columnOverride column="FILE_NAME" property="fileName" />
+      <columnOverride column="STORAGE_SHARE" property="storageShare" />
+      <columnOverride column="STORAGE_PARENT_DIR" property="storageParentDir" />
+      <columnOverride column="STORAGE_CHILD_DIR" property="storageChildDir" />
+    </table>
+  </context>
+</generatorConfiguration>

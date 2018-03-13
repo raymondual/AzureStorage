@@ -11,6 +11,7 @@
 
 	<mappers>
 		<mapper resource="com/mycom/mapper/UserMapper.xml" />
+		<mapper resource="com/mycom/mapper/StorageFileMapper.xml" />
 	</mappers>
 
 </configuration>

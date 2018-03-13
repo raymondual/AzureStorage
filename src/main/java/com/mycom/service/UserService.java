@@ -16,11 +16,6 @@ public class UserService {
 		return userDao.selectPassword(username);
 	}
 	
-	
-	
-	
-	
-
 	public UserService() {
 		super();
 	}

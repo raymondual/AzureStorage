@@ -24,7 +24,7 @@ public class FileBasics {
         //
     }
         
-    public static void uploadStorageFile(InputStream inStream,int length,String fileName,String shareName,String ...directoryName) throws StorageException, URISyntaxException, IOException, InvalidKeyException {
+    public static void uploadStorageFile(InputStream inStream,long length,String fileName,String shareName,String ...directoryName) throws StorageException, URISyntaxException, IOException, InvalidKeyException {
         CloudFileShare share = getFileShare(ClientProvider.getFileClient(), shareName);        
         CloudFileDirectory[] storedDirRef = new CloudFileDirectory[directoryName.length];
         CloudFileDirectory fileDir;
