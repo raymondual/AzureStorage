@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +23,6 @@ public class StorageFileHandler {
     
     @Autowired
     private StorageFileService storageFileService;
-    @Autowired
-    private HttpServletRequest request;
     @Autowired
     private HttpServletResponse response;
     
@@ -61,10 +58,11 @@ public class StorageFileHandler {
     public String download(@RequestParam("fileName" ) String fileName) {
         String storageShare = "firstshare";
         String storageParentDir = "level1dir";
-        String storageChildDir = "level2dir";    
+        String storageChildDir = "level2dir";
+        String markword = "This is sample";
                
         try {
-            FileBasics.downloadStorageFile(response.getOutputStream(), "Liu Leigang", fileName, storageShare, storageParentDir, storageChildDir);
+            FileBasics.downloadStorageFile(response.getOutputStream(), markword, fileName, storageShare, storageParentDir, storageChildDir);
             System.out.println("File download successfully.");
         } catch (InvalidKeyException e) {
             e.printStackTrace();
