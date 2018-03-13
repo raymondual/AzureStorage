@@ -8,7 +8,6 @@ import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
 
 import com.microsoft.azure.storage.StorageException;
-import com.microsoft.azure.storage.blob.ListBlobItem;
 import com.microsoft.azure.storage.file.CloudFile;
 import com.microsoft.azure.storage.file.CloudFileClient;
 import com.microsoft.azure.storage.file.CloudFileDirectory;
@@ -100,9 +99,9 @@ public class FileBasics {
             // Create a new file share if it is not exist
             fileShare = fileClient.getShareReference(fileShareName);
             if(fileShare.createIfNotExists()) {
-                PrintHelper.printInfo("\nCreated file share " + fileShareName);
+                PrintHelper.printInfo("Created file share " + fileShareName);
             } else {
-                PrintHelper.printInfo("\nFile share " + fileShareName + " has been created already");
+                PrintHelper.printInfo("File share " + fileShareName + " has been created already");
             }
         } catch (URISyntaxException e) {
             PrintHelper.printException(e);
@@ -120,9 +119,9 @@ public class FileBasics {
             // Create a new file directory if it is not exist
             fileDirectory = parentDir.getDirectoryReference(fileDirName);
             if(fileDirectory.createIfNotExists()) {
-                PrintHelper.printInfo("\nCreated file directory " + fileDirName);
+                PrintHelper.printInfo("Created file directory " + fileDirName);
             } else {
-                PrintHelper.printInfo("\nFile directory " + fileDirName + " has been created already");
+                PrintHelper.printInfo("File directory " + fileDirName + " has been created already");
             }
         } catch (URISyntaxException e) {
             PrintHelper.printException(e);

@@ -15,7 +15,7 @@
         
         <h2>Download Test</h2>
         <form method="POST" action="downloadFile">
-           File to upload: <input type="text" name="fileName" value="My.pdf">
+           Download file name: <input type="text" name="fileName" value="My.pdf">
            <input type="submit" value="Download">
         </form>
     </body>
