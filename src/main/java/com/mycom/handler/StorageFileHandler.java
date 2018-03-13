@@ -34,12 +34,15 @@ public class StorageFileHandler {
         String storageParentDir = "level1dir";
         String storageChildDir = "level2dir";        
         
-        int id = storageFileService.insertStorageFile(fileName, storageShare, storageParentDir, storageChildDir);
-        System.out.println("File id is " + id);
-        
         try {
             FileBasics.uploadStorageFile(file.getInputStream(), file.getSize(), fileName, storageShare, storageParentDir, storageChildDir);
             System.out.println("File upload successfully.");
+            int size = storageFileService.insertStorageFile(fileName, storageShare, storageParentDir, storageChildDir);
+            if(size <= 0) {
+                System.out.println("Insert db failure");
+            } else {
+                System.out.println("Insert db successfully");
+            }
         } catch (InvalidKeyException e) {
             e.printStackTrace();
         } catch (StorageException e) {

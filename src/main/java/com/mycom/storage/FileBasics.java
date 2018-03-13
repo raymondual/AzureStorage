@@ -8,6 +8,7 @@ import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
 
 import com.microsoft.azure.storage.StorageException;
+import com.microsoft.azure.storage.blob.ListBlobItem;
 import com.microsoft.azure.storage.file.CloudFile;
 import com.microsoft.azure.storage.file.CloudFileClient;
 import com.microsoft.azure.storage.file.CloudFileDirectory;
@@ -38,6 +39,7 @@ public class FileBasics {
         }
         CloudFile cloudFile = storedDirRef[directoryName.length-1].getFileReference(fileName);
         cloudFile.upload(inStream,length);
+        System.out.println("URI of " + fileName + " is: " + cloudFile.getUri());
         PrintHelper.printInfo("upload successfully.");
     }
     
