@@ -24,7 +24,11 @@ public class StorageFileService {
 	    record.setStorageChildDir(storageChildDir);
 	    storageFileDao.insert(record);
 	    return record.getId();
-	}	
+	}
+	
+	public int deleteStorageFile(long id) {
+	    return storageFileDao.deleteByPrimaryKey(id);
+    }
 
 	/**
 	 * @return the storageFileDao

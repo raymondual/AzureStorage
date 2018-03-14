@@ -53,7 +53,7 @@ public class StorageFileHandler {
             e.printStackTrace();
         }
         
-        return "upload";
+        return null;
     }
     
     @RequestMapping(value = "/downloadFile")
@@ -77,6 +77,35 @@ public class StorageFileHandler {
             e.printStackTrace();
         }
         
-        return "upload";
+        return null;
+    }
+    
+    @RequestMapping(value = "/deleteFile")
+    @ResponseBody
+    public String delete(@RequestParam("fileName" ) String fileName,@RequestParam("id" ) long id) {
+        String storageShare = "firstshare";
+        String storageParentDir = "level1dir";
+        String storageChildDir = "level2dir";
+               
+        try {
+            FileBasics.deleteStorageFile(fileName, storageShare, storageParentDir, storageChildDir);
+            long size = storageFileService.deleteStorageFile(id);
+            if(size <= 0) {
+                System.out.println("Delete db failure");
+            } else {
+                System.out.println("Delete db successfully, id is " + id);
+            }
+            System.out.println("File delete successfully.");
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (StorageException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        return null;
     }
 }

@@ -9,14 +9,21 @@
     <body>
         <h2>Upload Test</h2>
         <form method="POST" action="uploadFile" enctype="multipart/form-data">
-           File to upload: <input type="file" name="file">
-           <input type="submit" value="Upload">
+           File to upload: <input type="file" name="file" />
+           <input type="submit" value="Upload" />
         </form>
         
         <h2>Download Test</h2>
         <form method="POST" action="downloadFile">
-           Download file name: <input type="text" name="fileName" value="My.pdf">
-           <input type="submit" value="Download">
+           Download file name: <input type="text" name="fileName" value="My.pdf" />
+           <input type="submit" value="Download" />
+        </form>
+        
+        <h2>Delete Test</h2>
+        <form method="POST" action="deleteFile">
+           Delete file name: <input type="text" name="fileName" value="My.pdf" readonly />
+           <input type="hidden" name="id" value="6" />
+           <input type="submit" value="Delete" />
         </form>
     </body>
 </html>
