@@ -108,4 +108,26 @@ public class StorageFileHandler {
         
         return null;
     }
+    
+    
+    @RequestMapping(value = "/listFile")
+    @ResponseBody
+    public String list() {
+        String storageShare = "firstshare";
+               
+        try {
+            FileBasics.listStorageDirectory(storageShare);
+            System.out.println("File listed successfully.");
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (StorageException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        return null;
+    }
 }

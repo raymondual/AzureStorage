@@ -25,5 +25,10 @@
            <input type="hidden" name="id" value="6" />
            <input type="submit" value="Delete" />
         </form>
+        
+        <h2>Query Test</h2>
+        <form method="POST" action="listFile">
+           <input type="submit" value="Search" />
+        </form>
     </body>
 </html>

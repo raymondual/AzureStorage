@@ -6,12 +6,14 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
+import java.util.Iterator;
 
 import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.file.CloudFile;
 import com.microsoft.azure.storage.file.CloudFileClient;
 import com.microsoft.azure.storage.file.CloudFileDirectory;
 import com.microsoft.azure.storage.file.CloudFileShare;
+import com.microsoft.azure.storage.file.ListFileItem;
 
 /**
  * This basic usage of the Azure file storage service.
@@ -81,6 +83,15 @@ public class FileBasics {
         CloudFile file = storedDirRef[directoryName.length-1].getFileReference(fileName);
         if (file.deleteIfExists()) {
             PrintHelper.printInfo(fileName + " was deleted");
+        }
+    }
+    
+    public static void listStorageDirectory(String shareName) throws InvalidKeyException, StorageException, URISyntaxException, RuntimeException, IOException {
+        CloudFileShare share = getFileShare(ClientProvider.getFileClient(), shareName);
+        Iterable<ListFileItem> iter = share.getRootDirectoryReference().listFilesAndDirectories("My", null, null);
+        for (Iterator<ListFileItem> iterator = iter.iterator(); iterator.hasNext();) {
+            ListFileItem fileItem = iterator.next();
+            PrintHelper.printInfo(fileItem.getUri().toString());
         }
     }
 
